@@ -1,0 +1,233 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500&display=swap");
+
+:root {
+  --subject-color-dark: #fff;
+  --day-color-dark: #fff;
+  --faculty-color-dark: #fff;
+  --college-color-dark: #fff;
+  --box-shadow-dark: #fff;
+}
+
+/* reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+.cursor {
+  position: absolute;
+  background-color: #fff;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 5;
+  // opacity: 0.8;
+  transition: all 0.2s linear;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+/* utility */
+
+.opacity-0 {
+  opacity: 0.2;
+}
+
+.opacity-1 {
+  opacity: 1;
+}
+
+/* main */
+
+body {
+  background-image: url("../../img/bg-02.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 100vh;
+}
+
+.logo {
+  position: absolute;
+  left: 2em;
+  img {
+    width: 150px;
+  }
+}
+
+.landing {
+  height: 90vh;
+  margin: 1rem;
+  border-radius: 0.5rem;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 1.85rem;
+}
+
+.right {
+  border-radius: 0.2em;
+  padding: 4.5em 2.2em 6em 2.2em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  // box-shadow: -2px 6px 15px -5px var(--box-shadow-light);
+  position: relative;
+}
+
+.day ul {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.day ul li {
+  margin: 0.2rem;
+}
+
+.day ul li span {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 1.2rem;
+}
+
+.subjects {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.last-subjects {
+  align-items: flex-end;
+}
+
+.today-sub ul li {
+  margin: 0;
+}
+
+.subjects li {
+  margin: 0rem 0.2rem;
+  overflow: hidden;
+}
+
+.subjects li a {
+  color: var(--subject-color-light);
+  position: relative;
+  transition-property: all;
+  transition-duration: 650ms;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.subjects li a,
+.today-sub ul li a {
+  font-size: 1.8em;
+}
+
+.subjects li a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 0.14rem;
+  width: 100%;
+  border-radius: 2em;
+  background-color: var(--subject-color-light);
+  transform: translateX(-150%);
+  transition: transform 0.5s cubic-bezier(0.65, 0.01, 0.34, 0.91);
+}
+
+.last-subjects li a::after,
+.s2 li a::after {
+  transform: translateX(150%);
+}
+
+.subjects li a:hover::after {
+  transform: translateX(0);
+}
+
+.day ul .opacity-1 {
+  color: var(--subject-color-light);
+}
+
+.last-two {
+  margin-top: 4rem;
+  align-self: flex-end;
+}
+
+.last-two .day ul {
+  align-items: flex-end;
+}
+
+.last-three-days li {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.subjects li a,
+.day ul .opacity-1 {
+  color: var(--subject-color-dark);
+}
+
+.opacity-1 span {
+  color: #d7fdf1;
+}
+
+.subjects li a::after {
+  background-color: var(--subject-color-dark);
+}
+
+.day ul li {
+  color: var(--day-color-dark);
+}
+
+.college-text,
+.sem {
+  color: var(--college-color-dark);
+}
+
+.faculty {
+  color: var(--faculty-color-dark);
+}
+
+.right {
+  background: rgba(255, 255, 255, 0.258);
+  box-shadow: 0 8px 32px 0 rgba(137, 137, 137, 0.211);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+@supports (backdrop-filter: blur(20px)) {
+  .right {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+  }
+}
+
+/* media queries */
+
+@media (max-width: 375px) {
+  .right {
+    // box-shadow: none;
+    padding: 4.5em 1em 6em 1em;
+  }
+}
+@media (max-width: 720px) {
+  .logo {
+    display: none;
+  }
+}
