@@ -24,9 +24,7 @@ const subject = {
   },
   DSA: {
     title: "DSA",
-    // link: "https://meet.google.com/yak-ddjh-kcs",
-    // link: "https://meet.google.com/kmm-jckn-aah",
-    link: "https://meet.google.com/ssw-hkhf-oyk",
+    link: "https://meet.google.com/grj-qgaa-xeq",
   },
 };
 
